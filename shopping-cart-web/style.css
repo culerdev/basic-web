@@ -135,29 +135,30 @@ button {
 
 
 /* =========================
-   NAVBAR
+   NAVBAR (Đã căn đối thẳng hàng)
 ========================= */
 
 .navbar {
-    height: 55px;
-    padding: 0 60px;
-
+    height: 68px;
+    padding: 0 60px; /* Khớp tuyệt đối với padding của .header phía trên */
     display: flex;
     align-items: center;
-
+    justify-content: space-between; /* Tự động phân bổ Departments sang trái và Nav-links sang phải */
     background: #222;
 }
 
 
-/* Departments */
+/* All Departments */
 
 .departments {
-    width: 220px;
+    width: 260px;
+    height: 68px;
+    margin-left: 0;
 }
 
 .departments button {
     width: 100%;
-    height: 55px;
+    height: 100%;
 
     padding: 0 20px;
 
@@ -170,31 +171,33 @@ button {
     background: #ed1c24;
     color: white;
 
+    font-size: 15px;
     font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.departments button:hover {
-    background: #c9141c;
 }
 
 
-/* Navigation links */
+/* Navigation Links */
 
 .nav-links {
+    height: 100%;
+
     display: flex;
     align-items: center;
 
     gap: 30px;
 
-    margin-left: 40px;
+    margin-left: 0;
 }
 
 .nav-links a {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
     color: white;
 
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
 
     transition: 0.3s;
@@ -314,17 +317,17 @@ main {
 
 
 /* =========================
-   PRODUCT IMAGE
+   PRODUCT IMAGE (Đã tối ưu chiều cao & hiển thị trọn vẹn)
 ========================= */
 
 .product-image {
-    height: 320px;
+    height: 250px; /* Thu gọn chiều cao khung ảnh cho cân đối */
 
     position: relative;
 
     overflow: hidden;
 
-    background: #f2f2f2;
+    background: #fff; /* Nền trắng sạch sẽ cho khoảng trống ảnh */
 }
 
 .product-image img {
@@ -333,7 +336,7 @@ main {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain; /* Giúp ảnh hiển thị đầy đủ, không bị cắt xén */
 
     transition: transform 0.4s ease;
 }
