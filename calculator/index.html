@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercise Simple Math</title>
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <label for="numbera">Number A (*)</label><br>
+    <input type="number" id="numbera" required>
+    <br>
+
+    <label for="numberb">Number B (*)</label><br>
+    <input type="number" id="numberb" required>
+    <br><br>
+
+    Summation :
+    <input type="button" value="+" onclick="cong(getValueA(), getValueB())">
+    <br>
+
+    Subtraction :
+    <input type="button" value="-" onclick="tru(getValueA(), getValueB())">
+    <br>
+
+    Multiplication :
+    <input type="button" value="*" onclick="nhan(getValueA(), getValueB())">
+    <br>
+
+    Division :
+    <input type="button" value="/" onclick="chia(getValueA(), getValueB())">
+    <br><br><br>
+
+    Result A & B:<br>
+    <input type="text" id="result" disabled>
+
+</body>
+</html>
