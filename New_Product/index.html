@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>New Product</h1>
+
+    <form name = "frm">
+            <p>
+                <label>
+                    Product Name:
+                     <input type="text"  name="productName" id="productName">
+                </label>
+
+                <label >
+                    Quantity:
+                    <input type="number" name="quantity" id="quantity">
+                </label>
+                 
+            </p>
+            <p>
+                <label >
+                    Unit Price:
+                     <input type="number" name="unitPrice" id="unitPrice">
+                </label>
+
+                <label >
+                    Discount:
+                    <input type="number" name="discount" id="discount">
+                </label>
+           
+            </p>
+            <p>
+                <button type="button" onclick="sell()">Sell</button>
+                <button type="button" >Cancel</button>
+            </p>
+    </form>
+
+    <table id="tbl">
+        <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Discount</th>
+                <th>Subtotal</th>
+            </tr>
+       
+    </table>
+    <script type = "text/javascript">
+        var id = 0;
+        function sell() {
+            id++;
+            var productName = frm.productName.value;
+            var quantity = frm.quantity.value;
+            var unitPrice = frm.unitPrice.value;
+            var discount = frm.discount.value;
+            var subtotal = quantity * unitPrice*(1 - discount / 100);
+            var row = "<tr>";
+            row += "<td>" + id + "</td>";
+            row += "<td>" + productName + "</td>";
+            row += "<td>" + quantity + "</td>";
+            row += "<td>" + unitPrice + "</td>";
+            row += "<td>" + discount + "</td>";
+            row += "<td>" + subtotal + "</td>";
+            row += "</tr>";
+            document.getElementById("tbl").innerHTML += row;
+        }
+
+    </script>
+</body>
+</html>
