@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện nghe | EnglishHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">EnglishHub</a>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#lessons" class="active">Bài học</a>
+        </nav>
+    </header>
+    <main class="practice-wrap">
+        <a id="back-link" class="back-link" href="index.html#lessons">← Quay lại</a>
+        <div class="practice-card">
+            <div id="practice-heading"></div>
+            <div class="practice-tabs">
+                <button class="practice-tab active" id="dictation-tab">Dictation</button>
+                <button class="practice-tab" id="transcript-tab">Full transcript</button>
+            </div>
+            <div id="dictation-panel">
+                <p id="part-number">1 / 1</p>
+                <div class="audio-row">
+                    <button class="audio-button" id="play-audio">▶ Nghe audio</button>
+                    <label for="speed">Tốc độ:</label>
+                    <select id="speed">
+                        <option value="0.7">0.7x</option>
+                        <option value="0.85">0.85x</option>
+                        <option value="1" selected>1x</option>
+                    </select>
+                </div>
+                <textarea id="answer" class="answer-box" placeholder="Type what you hear..."></textarea>
+                <div id="feedback" class="feedback"></div>
+                <div class="practice-controls">
+                    <button class="action-btn" id="check-answer">Check</button>
+                    <button class="action-btn secondary" id="skip-answer"> Câu tiếp theo →</button>
+                    <button class="action-btn secondary" id="show-transcript">Full transcript</button>
+                </div>
+            </div>
+            <div id="transcript-panel" class="transcript"></div>
+        </div>
+    </main>
+    <footer><p>EnglishHub - Learn English step by step.</p></footer>
+    <script src="lessons.js"></script>
+    <script src="practice.js"></script>
+</body>
+</html>

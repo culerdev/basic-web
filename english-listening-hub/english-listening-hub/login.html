@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng nhập | EnglishHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Thanh điều hướng -->
+    <header class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="logo">EnglishHub</a>
+
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#lessons">Bài học</a>
+            <a href="index.html#progress">Trình độ</a>
+
+            <div class="account-links" id="account-links">
+                <a href="login.html" class="btn-login">Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- Form đăng nhập -->
+    <main class="account-container">
+
+        <section class="account-card">
+
+            <h1>Chào mừng trở lại!</h1>
+
+            <p class="account-description">
+                Đăng nhập để tiếp tục hành trình học tiếng Anh của bạn.
+            </p>
+
+            <form id="login-form">
+
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+
+                    <input
+                        type="email"
+                        id="login-email"
+                        placeholder="Nhập email của bạn"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Mật khẩu</label>
+
+                    <input
+                        type="password"
+                        id="login-password"
+                        placeholder="Nhập mật khẩu"
+                        required
+                    >
+                </div>
+
+                <p id="login-message" class="account-message"></p>
+
+                <button type="submit" class="account-button">
+                    Đăng nhập
+                </button>
+
+            </form>
+
+            <p class="account-footer">
+                Chưa có tài khoản?
+                <a href="register.html">Đăng ký ngay</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="auth.js"></script>
+
+</body>
+</html>

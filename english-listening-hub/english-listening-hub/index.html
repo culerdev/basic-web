@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Listening Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="logo">EnglishHub</a>
+
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#lessons">Bài học</a>
+            <a href="progress.html">Trình độ</a>
+
+           <div class="account-links" id="account-links">
+    <a href="login.html" class="btn-login">Đăng nhập</a>
+    <a href="register.html" class="btn-register">Đăng ký</a>
+</div>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section class="hero">
+            <p class="subtitle">ENGLISH LISTENING PRACTICE</p>
+            <h1>Luyện nghe tiếng Anh mỗi ngày</h1>
+            <p class="description">
+                Học tiếng Anh qua những đoạn hội thoại thực tế.
+                Luyện nghe, mở rộng từ vựng và cải thiện khả năng giao tiếp.
+            </p>
+            <a href="#lessons" class="btn-primary">Khám phá bài học</a>
+        </section>
+
+        <section class="level-section" id="levels">
+            <h2>Chọn trình độ của bạn</h2>
+            <div class="level-list">
+                <button class="level-btn active" data-level="ALL">Tất cả</button>
+                <button class="level-btn" data-level="A1">A1 - Beginner</button>
+                <button class="level-btn" data-level="A2">A2 - Elementary</button>
+                <button class="level-btn" data-level="B1">B1 - Intermediate</button>
+            </div>
+        </section>
+
+        <section class="lessons-section" id="lessons">
+            <div class="section-heading">
+                <div>
+                    <h2>English Conversations</h2>
+                    <p>Chọn một chủ đề để xem các Section và bài học.</p>
+                </div>
+                <span id="lesson-count">6 chủ đề</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Tìm chủ đề, ví dụ: restaurant...">
+            <div class="lesson-grid" id="lesson-list"></div>
+        </section>
+    </main>
+
+    <footer><p>EnglishHub - Learn English step by step.</p></footer>
+    <script src="lessons.js"></script>
+    <script src="account.js"></script>
+    <script src="progress.js"></script>
+
+</body>
+</html>

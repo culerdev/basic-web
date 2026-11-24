@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tiến độ học tập | EnglishHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Tổng thể trang */
+        .progress-page {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Tiêu đề */
+        .progress-heading {
+            margin-bottom: 30px;
+        }
+
+        .progress-heading h1 {
+            color: #172554;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .progress-heading p {
+            color: #64748b;
+        }
+
+        /* Thẻ chào mừng */
+        .welcome-card {
+            background: #5145cd;
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 28px;
+        }
+
+        .welcome-card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .welcome-card p {
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* Khu vực chọn trình độ */
+        .level-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 26px;
+            margin-bottom: 28px;
+        }
+
+        .level-card h2 {
+            margin-top: 0;
+            color: #172554;
+        }
+
+        .level-description {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .level-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .level-button {
+            padding: 12px 24px;
+            border: 1px solid #d8d3ff;
+            border-radius: 10px;
+            background: white;
+            color: #5145cd;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .level-button:hover,
+        .level-button.active {
+            background: #5145cd;
+            color: white;
+        }
+
+        /* Các thẻ thống kê */
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .stat-card p {
+            color: #64748b;
+            margin-top: 0;
+        }
+
+        .stat-card h3 {
+            color: #5145cd;
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+        /* Thanh tiến độ */
+        .completion-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 26px;
+            margin-bottom: 28px;
+        }
+
+        .completion-card h2 {
+            color: #172554;
+            margin-top: 0;
+        }
+
+        .progress-track {
+            height: 12px;
+            background: #e9e7f5;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #5145cd;
+            border-radius: 20px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-note {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        /* Nút quay lại */
+        .back-home {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #5145cd;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-home:hover {
+            background: #4035b5;
+        }
+
+        /* Giao diện điện thoại */
+        @media (max-width: 700px) {
+            .statistics {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-heading h1 {
+                font-size: 25px;
+            }
+
+            .welcome-card,
+            .level-card,
+            .completion-card,
+            .stat-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Thanh điều hướng -->
+    
+<header class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="logo">EnglishHub</a>
+
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#lessons">Bài học</a>
+            <a href="progress.html">Trình độ</a>
+
+            <div class="account-links" id="account-links">
+                <a href="login.html" class="btn-login">Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Nội dung chính -->
+    <main class="progress-page">
+
+        <section class="progress-heading">
+            <h1>Hồ sơ học tập</h1>
+            <p>Theo dõi hành trình luyện nghe tiếng Anh của bạn.</p>
+        </section>
+
+        <!-- Chào mừng người dùng -->
+        <section class="welcome-card">
+            <h2>Xin chào, <span id="user-name">bạn</span>!</h2>
+
+            <p>
+                Chào mừng bạn quay lại EnglishHub.
+                Hãy luyện nghe mỗi ngày để cải thiện khả năng tiếng Anh.
+            </p>
+        </section>
+
+        <!-- Chọn trình độ -->
+        <section class="level-card">
+            <h2>Trình độ hiện tại</h2>
+
+            <p class="level-description">
+                Chọn cấp độ phù hợp với khả năng tiếng Anh hiện tại của bạn.
+            </p>
+
+            <div class="level-options">
+                <button class="level-button" data-level="A1">A1</button>
+                <button class="level-button" data-level="A2">A2</button>
+                <button class="level-button" data-level="B1">B1</button>
+                <button class="level-button" data-level="B2">B2</button>
+            </div>
+
+            <p id="selected-level">
+                Bạn chưa chọn trình độ.
+            </p>
+        </section>
+
+        <!-- Thống kê -->
+        <section class="statistics">
+
+            <article class="stat-card">
+                <p>Tổng số bài học</p>
+                <h3 id="total-lessons">0</h3>
+            </article>
+
+            <article class="stat-card">
+                <p>Bài đã hoàn thành</p>
+                <h3 id="completed-lessons">0</h3>
+            </article>
+
+            <article class="stat-card">
+                <p>Tiến độ học tập</p>
+                <h3 id="completion-percent">0%</h3>
+            </article>
+
+        </section>
+
+        <!-- Thanh tiến độ -->
+        <section class="completion-card">
+            <h2>Tiến trình của bạn</h2>
+
+            <p>Tiếp tục luyện nghe để tiến bộ mỗi ngày!</p>
+
+            <div
+                class="progress-track"
+                role="progressbar"
+                aria-label="Tiến độ học tập"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="progress-track"
+            >
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <p class="progress-note" id="progress-note">
+                Bạn chưa hoàn thành bài học nào.
+            </p>
+        </section>
+
+        <a href="index.html" class="back-home">
+            Quay lại trang chủ
+        </a>
+
+    </main>
+
+    <script src="account.js"></script>
+    <script src="progress.js"></script> 
+    
+
+</body>
+
+</html>
